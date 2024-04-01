@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .clip-prespective {
+        clip-path: polygon(0 0, 97% 15%, 100% 85%, 0% 100%)
+    }
+
+}
