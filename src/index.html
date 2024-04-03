@@ -1,198 +1,297 @@
-<!doctype html>
-<html class="w-full h-full">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-
-<body class="h-full w-full">
-    <section class="container w-full h-1/2 mx-auto relative">
-        <!-- navbar -->
-        <div class="z-10 flex w-full h-14 px-5 mt-5 justify-center absolute">
-            <div class="flex w-full relative">
-                <div class=" bg-black opacity-40 w-full h-full absolute "></div>
-                <!-- navItems -->
-                <div class="flex justify-between items-center w-full h-14 relative pr-2">
-                    <!-- left items -->
-                    <div
-                        class="z-10 flex justify-evenly items-center bg-white w-32 h-14 text-2xl font-bold clip-prespective cursor-pointer hover:scale-x-125 transition-all duration-500 ease-in-out">
-                        <!-- living -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
-                        </svg>
-                        <span class="text-gray-800">Living</span>
-                    </div>
-                    <!-- right items -->
-                    <div class="flex flex-row-reverse justify-between items-center gap-3">
-                        <!-- menu icon -->
-                        <div
-                            class="flex items-center text-black bg-yellow-300 rounded-sm  p-1 drop-shadow-xl hover:shadow hover:shadow-gray-500 cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                            </svg>
-                        </div>
-                        <!-- moon icon -->
-                        <div class="flex text-white shadow hover:shadow-gray-400 cursor-pointer rounded-full p-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                            </svg>
-                        </div>
-                        <!-- search icon -->
-                        <div class="flex text-white shadow hover:shadow-gray-400 cursor-pointer rounded-full p-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                            </svg>
-
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <!-- navbar -->
+    <nav class="flex w-full fixed z-10">
+      <div
+        class="z-10 flex w-full h-14 mt-5 justify-center container mx-auto relative"
+      >
+        <div class="bg-black opacity-40 w-full h-full absolute"></div>
+        <!-- navItems -->
+        <div
+          class="flex justify-between items-center w-full h-14 relative mr-3"
+        >
+          <!-- left items -->
+          <div
+            class="z-10 flex justify-evenly items-center bg-white w-32 h-14 text-2xl font-bold clip-prespective cursor-pointer hover:scale-x-125 transition-all duration-500 ease-in-out"
+          >
+            <!-- living -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-8 h-8"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
+              />
+            </svg>
+            <span class="text-gray-800">Living</span>
+          </div>
+          <!-- right items -->
+          <div class="flex flex-row-reverse justify-between items-center gap-3">
+            <!-- menu icon -->
+            <div
+              class="flex items-center text-black bg-yellow-300 rounded-sm p-1 drop-shadow-xl hover:shadow hover:shadow-gray-500 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                />
+              </svg>
             </div>
-        </div>
-        <!-- Slider main container -->
-        <div class="swiper w-full h-full">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <div class=" bg-black opacity-60 w-full h-full absolute"></div>
-                    <div
-                        class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12">
-                        <h1 class="text-2xl font-bold text-center">Interior design and decor for your home</h1>
-                        <span class="text-lg text-center">We are a team of professional, energetic individuals with
-                            talented
-                            designers.</span>
-                        <button
-                            class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500 ">Learn
-                            More</button>
-                    </div>
-                    <img src="./img/slide1.jpg" alt="slide1" class="w-full h-full object-cover">
-                </div>
-                <div class="swiper-slide">
-                    <div class=" bg-black opacity-60 w-full h-full absolute"></div>
-                    <div
-                        class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12">
-                        <h1 class="text-2xl font-bold text-center">Our team creates a free spaces for our clients.</h1>
-                        <span class="text-lg text-center">We are a team of professional, energetic individuals with
-                            talented
-                            designers. </span>
-                        <button
-                            class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500 ">Learn
-                            More</button>
-
-                    </div> <img src="./img/slide2.jpg" alt="slide2" class="w-full h-full object-cover">
-                </div>
-                <div class="swiper-slide">
-                    <div class=" bg-black opacity-60 w-full h-full absolute"></div>
-                    <div
-                        class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12">
-                        <h1 class="text-2xl font-bold text-center">Take a look at our recent works to find it out.</h1>
-                        <span class="text-lg text-center">We are a team of professional, energetic individuals with
-                            talented
-                            designers.</span>
-                        <button
-                            class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500 ">Learn
-                            More</button>
-
-                    </div>
-                    <img src="./img/slide3.jpg" alt="slide3" class="w-full h-full object-cover">
-                </div>
-                <div class="swiper-slide">
-                    <div class=" bg-black opacity-60 w-full h-full absolute"></div>
-                    <div
-                        class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12">
-                        <h1 class="text-2xl font-bold text-center">A great way to your new interior home </h1>
-                        <span class="text-lg text-center">We are a team of professional, energetic individuals with
-                            talented
-                            designers.</span>
-                        <button
-                            class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500 ">Learn
-                            More</button>
-
-                    </div>
-                    <img src="./img/slide4.jpg" alt="slide4" class="w-full h-full object-cover">
-                </div>
+            <!-- moon icon -->
+            <div
+              class="flex text-white shadow hover:shadow-gray-400 cursor-pointer rounded-full p-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+                />
+              </svg>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <!-- search icon -->
+            <div
+              class="flex text-white shadow hover:shadow-gray-400 cursor-pointer rounded-full p-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
-
-    </section>
-    <section class="container w-full mx-auto relative px-4">
+      </div>
+    </nav>
+    <header >
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="bg-black opacity-60 w-full h-full absolute"></div>
+            <div
+              class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12"
+            >
+              <h1 class="text-2xl font-bold text-center">
+                Interior design and decor for your home
+              </h1>
+              <span class="text-lg text-center"
+                >We are a team of professional, energetic individuals with
+                talented designers.</span
+              >
+              <button
+                class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500"
+              >
+                Learn More
+              </button>
+            </div>
+            <img
+              src="./img/slide1.jpg"
+              alt="slide1"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-black opacity-60 w-full h-full absolute"></div>
+            <div
+              class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12"
+            >
+              <h1 class="text-2xl font-bold text-center">
+                Our team creates a free spaces for our clients.
+              </h1>
+              <span class="text-lg text-center"
+                >We are a team of professional, energetic individuals with
+                talented designers.
+              </span>
+              <button
+                class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500"
+              >
+                Learn More
+              </button>
+            </div>
+            <img
+              src="./img/slide2.jpg"
+              alt="slide2"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-black opacity-60 w-full h-full absolute"></div>
+            <div
+              class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12"
+            >
+              <h1 class="text-2xl font-bold text-center">
+                Take a look at our recent works to find it out.
+              </h1>
+              <span class="text-lg text-center"
+                >We are a team of professional, energetic individuals with
+                talented designers.</span
+              >
+              <button
+                class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500"
+              >
+                Learn More
+              </button>
+            </div>
+            <img
+              src="./img/slide3.jpg"
+              alt="slide3"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-black opacity-60 w-full h-full absolute"></div>
+            <div
+              class="flex flex-col justify-center gap-2 items-center absolute text-white w-full h-full px-6 pt-12"
+            >
+              <h1 class="text-2xl font-bold text-center">
+                A great way to your new interior home
+              </h1>
+              <span class="text-lg text-center"
+                >We are a team of professional, energetic individuals with
+                talented designers.</span
+              >
+              <button
+                class="bg-yellow-300 h-14 w-36 text-gray-800 text-base font-bold m-5 rounded-md transition-all duration-150 ease-in-out hover:scale-105 hover:shadow-md hover:bg-yellow-500"
+              >
+                Learn More
+              </button>
+            </div>
+            <img
+              src="./img/slide4.jpg"
+              alt="slide4"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </header>
+    <!--  -->
+    <main class="flex flex-col items-center h-full w-full">
+      <section class="w-full relative px-4">
         <!-- About Us -->
-        <div class="flex flex-col justify-center gap-2 items-center w-full  pt-12">
-            <img src="./img/about-long1.jpg" alt="about-long1" class="aspect-square object-cover">
-            <h1 class="text-2xl font-bold w-full pt-6 text-gray-800">About Us</h1>
-            <span class="text-base font-semibold text-gray-500 w-full pb-6 border-b">We are a team of
-                professional,
-                energetic individuals with talented
-                designers and experienced managers available to guide our clients through the flawless and timely
-                execution of any residential design project. Since day one, we have been delivering creative and cozy
-                interiors to our clients worldwide.</span>
+        <div
+          class="flex flex-col justify-center gap-2 items-center w-full pt-12"
+        >
+          <img
+            src="./img/about-long1.jpg"
+            alt="about-long1"
+            class="aspect-square object-cover"
+          />
+          <h1 class="text-2xl font-bold w-full pt-6 text-gray-800">About Us</h1>
+          <span
+            class="text-base font-semibold text-gray-500 w-full pb-6 border-b"
+            >We are a team of professional, energetic individuals with talented
+            designers and experienced managers available to guide our clients
+            through the flawless and timely execution of any residential design
+            project. Since day one, we have been delivering creative and cozy
+            interiors to our clients worldwide.</span
+          >
         </div>
         <!-- Award-winning / Expert Team -->
-        <div class="flex flex-col justify-center gap-2 items-center w-full  pt-6">
-            <div class="flex flex-col justify-center gap-2 items-center w-full">
-                <h1 class="text-2xl font-bold w-full text-gray-800">Award-winning</h1>
-                <span class="text-base font-semibold text-gray-500 w-full pb-6">We have received
-                    numerous awards for our designs, concepts, and ideas.</span>
-            </div>
-            <div class="flex flex-col justify-center gap-2 items-center w-full">
-                <h1 class="text-2xl font-bold w-full text-gray-800">Expert Team</h1>
-                <span class="text-base font-semibold text-gray-500 w-full pb-6">We are a team of
-                    dedicated interior design and remodeling professionals.</span>
-            </div>
+        <div
+          class="flex flex-col justify-center gap-2 items-center w-full pt-6"
+        >
+          <div class="flex flex-col justify-center gap-2 items-center w-full">
+            <h1 class="text-2xl font-bold w-full text-gray-800">
+              Award-winning
+            </h1>
+            <span class="text-base font-semibold text-gray-500 w-full pb-6"
+              >We have received numerous awards for our designs, concepts, and
+              ideas.</span
+            >
+          </div>
+          <div class="flex flex-col justify-center gap-2 items-center w-full">
+            <h1 class="text-2xl font-bold w-full text-gray-800">Expert Team</h1>
+            <span class="text-base font-semibold text-gray-500 w-full pb-6"
+              >We are a team of dedicated interior design and remodeling
+              professionals.</span
+            >
+          </div>
         </div>
-        <div class="flex flex-col w-full gap-7  pt-6  h-52">
-            <div class="flex flex-col gap-2">
-                <span class="text-gray-500 font-bold">Interior Design</span>
-                <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
-                    <div class="w-8/12 h-1.5 bg-cyan-500">
-                    </div> 
-                </div>
+        <div class="flex flex-col w-full gap-7 pt-6 h-52">
+          <div class="flex flex-col gap-2">
+            <span class="text-gray-500 font-bold">Interior Design</span>
+            <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
+              <div class="w-8/12 h-1.5 bg-cyan-500"></div>
             </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-gray-500 font-bold">Plan Tecnology</span>
-                <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
-                    <div class="w-4/5 h-1.5 bg-cyan-500">
-                    </div>
-                </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-gray-500 font-bold">Plan Tecnology</span>
+            <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
+              <div class="w-4/5 h-1.5 bg-cyan-500"></div>
             </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-gray-500 font-bold">Consultations</span>
-                <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
-                    <div class="w-11/12 h-1.5 bg-cyan-500">
-                    </div>
-                </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-gray-500 font-bold">Consultations</span>
+            <div class="w-full rounded-2xl bg-gray-200 overflow-hidden">
+              <div class="w-11/12 h-1.5 bg-cyan-500"></div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            autoplay: {
-                delay: 3000,
-            },
-            loop: true,
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        autoplay: {
+          delay: 3000,
+        },
+        loop: true,
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
     </script>
-</body>
-
+  </body>
 </html>
