@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./output.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
-<body>
+<body x-init="console.log('I\'m being initialized!')">
   <!-- navbar -->
   <nav class="flex w-full fixed z-10">
     <div class="z-10 flex w-full h-14 mt-5 justify-center container mx-auto relative">
@@ -294,20 +295,20 @@
         </div>
       </div>
       <div class="w-full pt-12 grid grid-cols-1 md:grid-cols-2 md:gap-2">
-        <div class="flex justify-center -space-x-14">
-          <div class="w-64">
-            <img src="./img/about4.jpg" alt="" class="aspect-[9/13] rounded-sm border-[8px] border-white -mt-10">
+        <div class="flex justify-around  mb-5 relative pb-5" x-on:mouseover="mouseover" x-on:mouseout="mouseout">
+          <div id="imgBox1" class="w-full flex justify-center -translate-x-12 transition-all ease-in-out duration-500">
+            <img src="./img/about4.jpg" alt="" class="w-4/5 aspect-[9/11] rounded-sm border-[8px] border-white" />
           </div>
-          <div class="w-64">
-            <img src="./img/about3.jpg" alt="" class="aspect-[9/13] rounded-sm border-[8px] border-white ">
+          <div id="imgBox2"
+            class="w-full absolute flex justify-center translate-x-12 translate-y-12 transition-all ease-in-out duration-500">
+            <img src="./img/about3.jpg" alt="" class="w-4/5 aspect-[9/11] rounded-sm border-[8px] border-white" />
           </div>
         </div>
       </div>
     </section>
   </main>
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
     const swiper = new Swiper(".swiper", {
       // Optional parameters
@@ -320,6 +321,20 @@
         el: ".swiper-pagination",
       },
     });
+    function mouseover(e) {
+      const el1 = document.querySelector('#imgBox1')
+      const el2 = document.querySelector('#imgBox2')
+      el1?.classList.add('translate-y-12')
+      el2?.classList.remove('translate-y-12')
+    }
+    function mouseout(e) {
+      const el1 = document.querySelector('#imgBox1')
+      const el2 = document.querySelector('#imgBox2')
+      el1?.classList.remove('translate-y-12')
+      el2?.classList.add('translate-y-12')
+    }
+
+
   </script>
 </body>
 
